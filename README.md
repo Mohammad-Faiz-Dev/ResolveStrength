@@ -120,3 +120,5 @@ Colors and typography are defined in `app/globals.css` as CSS variables.
 | `--text-secondary` | Supporting text |
 | `--font-display` | Playfair Display — headings |
 | `--font-body` | DM Sans — body copy |
+
+https://fit-by-routine-udo6.vercel.app/
