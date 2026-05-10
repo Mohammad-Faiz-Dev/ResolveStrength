@@ -107,6 +107,14 @@ export default function Navbar() {
           color: var(--bg-deep);
           flex-shrink: 0;
         }
+        .brand-mark-img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+          flex-shrink: 0;
+          display: block;
+        }
         .brand-name {
           font-family: var(--font-display);
           font-size: 1.15rem;
@@ -358,7 +366,13 @@ export default function Navbar() {
         <div className="navbar-inner">
           {/* Brand */}
           <Link href="/" className="brand">
-            <div className="brand-mark">R</div>
+            <img
+              src="/images/ResolveStrength/Logo.png"
+              alt="ResolveStrength"
+              className="brand-mark-img"
+              width={32}
+              height={32}
+            />
             <span className="brand-name">Resolve<span>Strength</span></span>
           </Link>
 
