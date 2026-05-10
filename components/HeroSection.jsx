@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function HeroSection() {
-  const [mode, setMode] = useState("signin"); // 'signin' | 'signup'
+  const [mode, setMode] = useState("signin"); // 'Login' | 'signup'
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -420,21 +420,21 @@ export default function HeroSection() {
           {/* Right: auth card */}
           <div className="auth-card">
             <div className="auth-card-title">
-              {mode === "signin" ? "Welcome back" : "Join ResolveStrength"}
+              {mode === "Login" ? "Welcome back" : "Join ResolveStrength"}
             </div>
             <div className="auth-card-sub">
-              {mode === "signin"
-                ? "Sign in to access your strength journey."
+              {mode === "Login"
+                ? "Login to access your strength journey."
                 : "Create your free account and start building today."}
             </div>
 
             {/* Tab toggle */}
             <div className="auth-tabs">
               <button
-                className={`auth-tab${mode === "signin" ? " active" : ""}`}
-                onClick={() => { setMode("signin"); setMessage(null); }}
+                className={`auth-tab${mode === "Login" ? " active" : ""}`}
+                onClick={() => { setMode("Login"); setMessage(null); }}
               >
-                Sign In
+                Login
               </button>
               <button
                 className={`auth-tab${mode === "signup" ? " active" : ""}`}
@@ -505,8 +505,8 @@ export default function HeroSection() {
               <button className="btn-submit" type="submit" disabled={loading}>
                 {loading
                   ? "Please wait…"
-                  : mode === "signin"
-                  ? "Sign In"
+                  : mode === "Login"
+                  ? "Login"
                   : "Create Account"}
               </button>
             </form>
@@ -516,7 +516,7 @@ export default function HeroSection() {
             )}
 
             <div className="auth-footer">
-              {mode === "signin" ? (
+              {mode === "Login" ? (
                 <>
                   No account?{" "}
                   <span className="auth-footer-link" onClick={() => { setMode("signup"); setMessage(null); }}>
@@ -526,8 +526,8 @@ export default function HeroSection() {
               ) : (
                 <>
                   Already a member?{" "}
-                  <span className="auth-footer-link" onClick={() => { setMode("signin"); setMessage(null); }}>
-                    Sign in
+                  <span className="auth-footer-link" onClick={() => { setMode("Login"); setMessage(null); }}>
+                    Login
                   </span>
                 </>
               )}

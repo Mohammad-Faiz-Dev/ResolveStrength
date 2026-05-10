@@ -33,7 +33,7 @@ const SAMPLE_ARTICLES = [
 export default function ArticleSection() {
   return (
     <>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         .articles-section {
           padding: 5rem 0 6rem;
           background: var(--bg-surface);
@@ -241,7 +241,7 @@ export default function ArticleSection() {
           .articles-cta-note { text-align: left; border-left: none; border-top: 1px solid var(--border); padding: 1rem 0 0; max-width: unset; }
           .articles-banner { flex-direction: column; align-items: flex-start; }
         }
-      `}</style>
+      `}} />
 
       <section className="articles-section">
         <div className="container">
