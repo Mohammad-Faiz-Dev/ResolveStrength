@@ -9,18 +9,70 @@ const scienceDropdown = [
     href: "/science/workout-fundamentals",
     desc: "The core principles behind effective training.",
     icon: "◈",
+    sub: [
+      {
+        label: "Hypertrophy & Mechanics",
+        href: "/science/workout-fundamentals/hypertrophy-and-mechanics",
+        desc: "How muscles grow and the physics of tension.",
+      },
+      {
+        label: "Progressive Overload",
+        href: "/science/workout-fundamentals/progressive-overload",
+        desc: "Strategies for consistent improvement.",
+      },
+      {
+        label: "Recovery Science",
+        href: "/science/workout-fundamentals/recovery-science",
+        desc: "Sleep, protein synthesis & nervous system recovery.",
+      },
+      {
+        label: "Bioenergetics",
+        href: "/science/workout-fundamentals/bioenergetics",
+        desc: "How the body uses ATP-CP, Glycolytic & Oxidative systems.",
+      },
+    ],
   },
   {
     label: "Visual Explainers",
     href: "/science/visual-explainers",
     desc: "Science concepts made clear through illustration.",
     icon: "⬡",
+    comingSoon: true,
+    sub: [
+      {
+        label: "Muscle Anatomy Maps",
+        href: "/science/visual-explainers/muscle-anatomy-maps",
+        desc: "Primary & secondary movers for common lifts.",
+      },
+      {
+        label: "Sliding Filament Theory",
+        href: "/science/visual-explainers/sliding-filament-theory",
+        desc: "How muscle fibers contract at a molecular level.",
+      },
+      {
+        label: "Joint Biomechanics",
+        href: "/science/visual-explainers/joint-biomechanics",
+        desc: "Leverage & moment arms behind key form cues.",
+      },
+    ],
   },
   {
     label: "Workout Myths & Facts",
     href: "/science/myths-and-facts",
     desc: "Separating evidence from popular fiction.",
     icon: "◎",
+    sub: [
+      {
+        label: "The Anabolic Window",
+        href: "/science/myths-and-facts/anabolic-window",
+        desc: "Post-workout nutrition vs. total daily intake.",
+      },
+      {
+        label: "Spot Reduction & Fat Loss",
+        href: "/science/myths-and-facts/spot-reduction-and-fat-loss",
+        desc: "Debunking 'burning belly fat' through specific exercises.",
+      },
+    ],
   },
 ];
 
@@ -45,15 +97,30 @@ const aboutDropdown = {
 function useDropdown() {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef(null);
-  const openMenu = () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); setOpen(true); };
-  const closeMenu = () => { timeoutRef.current = setTimeout(() => setOpen(false), 130); };
+  const openMenu = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+  const closeMenu = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 130);
+  };
   return { open, openMenu, closeMenu, setOpen };
 }
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredScienceIdx, setHoveredScienceIdx] = useState(null);
+  const scienceSubTimeoutRef = useRef(null);
   const science = useDropdown();
   const about = useDropdown();
+
+  const openScienceSub = (idx) => {
+    if (scienceSubTimeoutRef.current) clearTimeout(scienceSubTimeoutRef.current);
+    setHoveredScienceIdx(idx);
+  };
+  const closeScienceSub = () => {
+    scienceSubTimeoutRef.current = setTimeout(() => setHoveredScienceIdx(null), 100);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -63,7 +130,8 @@ export default function Navbar() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .navbar {
           position: fixed;
           top: 0; left: 0; right: 0;
@@ -96,16 +164,6 @@ export default function Navbar() {
           align-items: center;
           gap: 10px;
           text-decoration: none;
-        }
-        .brand-mark {
-          width: 32px; height: 32px;
-          background: linear-gradient(135deg, var(--gold) 0%, var(--green-bright) 100%);
-          border-radius: 8px;
-          display: flex; align-items: center; justify-content: center;
-          font-family: var(--font-display);
-          font-weight: 700; font-size: 16px;
-          color: var(--bg-deep);
-          flex-shrink: 0;
         }
         .brand-mark-img {
           width: 32px;
@@ -150,12 +208,9 @@ export default function Navbar() {
           border: none;
           font-family: var(--font-body);
         }
-        .nav-link:hover {
+        .nav-link:hover, .nav-link.active {
           color: var(--text-primary);
           background: rgba(255,255,255,0.04);
-        }
-        .nav-link.active {
-          color: var(--text-primary);
         }
 
         /* Soon badge */
@@ -180,7 +235,7 @@ export default function Navbar() {
         }
         .nav-chevron.open { transform: rotate(180deg); }
 
-        /* ── Science dropdown ── */
+        /* ── Science dropdown (L1) ── */
         .dropdown-science {
           position: absolute;
           top: calc(100% + 10px);
@@ -190,7 +245,7 @@ export default function Navbar() {
           border: 1px solid var(--border);
           border-radius: var(--radius-lg);
           padding: 0.75rem;
-          width: 280px;
+          width: 290px;
           box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03);
           opacity: 0;
           pointer-events: none;
@@ -201,6 +256,8 @@ export default function Navbar() {
           transform: translateX(-50%) translateY(0) scale(1);
           pointer-events: auto;
         }
+
+        /* Science item row (L1) */
         .science-item {
           display: flex;
           align-items: flex-start;
@@ -209,11 +266,28 @@ export default function Navbar() {
           border-radius: var(--radius);
           text-decoration: none;
           transition: background 0.15s;
-          cursor: not-allowed;
-          opacity: 0.6;
+          cursor: pointer;
+          position: relative;
+        }
+        .science-item.coming-soon {
+          cursor: default;
+          opacity: 0.55;
+        }
+        .science-item.coming-soon .science-item-body strong::after {
+          content: 'SOON';
+          font-size: 8px;
+          font-weight: 600;
+          letter-spacing: 0.07em;
+          padding: 1px 5px;
+          border-radius: 20px;
+          background: rgba(90,158,120,0.12);
+          border: 1px solid rgba(90,158,120,0.22);
+          color: var(--green);
+          margin-left: 8px;
+          vertical-align: middle;
         }
         .science-item:hover {
-          background: rgba(255,255,255,0.04);
+          background: rgba(255,255,255,0.05);
         }
         .science-item-icon {
           width: 28px; height: 28px;
@@ -224,6 +298,11 @@ export default function Navbar() {
           font-size: 12px;
           color: var(--gold);
           flex-shrink: 0;
+          margin-top: 1px;
+        }
+        .science-item-body {
+          flex: 1;
+          min-width: 0;
         }
         .science-item-body strong {
           display: block;
@@ -237,6 +316,19 @@ export default function Navbar() {
           color: var(--text-muted);
           line-height: 1.4;
         }
+        /* Right chevron for sub-hover */
+        .science-item-arrow {
+          width: 12px; height: 12px;
+          opacity: 0.3;
+          flex-shrink: 0;
+          margin-top: 4px;
+          transition: opacity 0.15s, transform 0.15s;
+        }
+        .science-item:hover .science-item-arrow {
+          opacity: 0.75;
+          transform: translateX(2px);
+        }
+
         .science-coming-soon-bar {
           margin: 0.5rem 0 0;
           padding: 7px 12px;
@@ -254,6 +346,69 @@ export default function Navbar() {
           border-radius: 50%;
           background: var(--green-dim);
           flex-shrink: 0;
+        }
+
+        /* ── Science sub-dropdown (L2 flyout) ── */
+        .dropdown-science-sub {
+          position: absolute;
+          top: 0;
+          left: calc(100% + 8px);
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 0.6rem;
+          width: 270px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.03);
+          opacity: 0;
+          transform: translateX(-6px) scale(0.97);
+          pointer-events: none;
+          transition: opacity 0.18s ease, transform 0.18s ease;
+          z-index: 10;
+        }
+        .dropdown-science-sub.open {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+          pointer-events: auto;
+        }
+        .science-sub-item {
+          display: block;
+          padding: 9px 11px;
+          border-radius: var(--radius);
+          text-decoration: none;
+          transition: background 0.14s, transform 0.14s;
+          cursor: pointer;
+        }
+        .science-sub-item:hover {
+          background: rgba(255,255,255,0.05);
+          transform: translateX(2px);
+        }
+        .science-sub-item.disabled {
+          cursor: not-allowed;
+          opacity: 0.55;
+        }
+        .science-sub-item.disabled:hover {
+          transform: none;
+        }
+        .science-sub-item-label {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 2px;
+        }
+        .science-sub-item-desc {
+          font-size: 0.72rem;
+          color: var(--text-muted);
+          line-height: 1.4;
+        }
+        .science-sub-header {
+          font-size: 9px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--gold);
+          font-weight: 500;
+          padding: 4px 11px 8px;
+          border-bottom: 1px solid var(--border);
+          margin-bottom: 4px;
         }
 
         /* ── About dropdown ── */
@@ -378,11 +533,11 @@ export default function Navbar() {
 
           {/* Nav Links */}
           <ul className="nav-links">
-            {/* Science — hover dropdown */}
+            {/* Science — hover dropdown with L2 flyouts */}
             <li
               className="nav-item"
               onMouseEnter={science.openMenu}
-              onMouseLeave={science.closeMenu}
+              onMouseLeave={() => { science.closeMenu(); closeScienceSub(); }}
             >
               <button
                 className={`nav-link${science.open ? " active" : ""}`}
@@ -390,27 +545,60 @@ export default function Navbar() {
                 aria-expanded={science.open}
               >
                 Science
-                <svg
-                  className={`nav-chevron${science.open ? " open" : ""}`}
-                  viewBox="0 0 16 16" fill="none"
-                >
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg className={`nav-chevron${science.open ? " open" : ""}`} viewBox="0 0 16 16" fill="none">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
 
               <div className={`dropdown-science${science.open ? " open" : ""}`} role="menu">
-                {scienceDropdown.map((item) => (
-                  <div key={item.href} className="science-item" role="menuitem" title="Coming soon">
+                {scienceDropdown.map((item, idx) => (
+                  <div
+                    key={item.href}
+                    className={`science-item${item.comingSoon ? " coming-soon" : ""}`}
+                    role="menuitem"
+                    onMouseEnter={() => openScienceSub(idx)}
+                    onMouseLeave={closeScienceSub}
+                  >
                     <div className="science-item-icon">{item.icon}</div>
                     <div className="science-item-body">
                       <strong>{item.label}</strong>
                       <span>{item.desc}</span>
                     </div>
+                    <svg className="science-item-arrow" viewBox="0 0 12 12" fill="none">
+                      <path d="M4.5 2.5l3 3.5-3 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+
+                    {/* L2 sub-dropdown flyout */}
+                    <div
+                      className={`dropdown-science-sub${hoveredScienceIdx === idx ? " open" : ""}`}
+                      onMouseEnter={() => openScienceSub(idx)}
+                      onMouseLeave={closeScienceSub}
+                    >
+                      <div className="science-sub-header">{item.label}{item.comingSoon ? " · Coming Soon" : ""}</div>
+                      {item.sub.map((sub) => (
+                        item.comingSoon ? (
+                          <div key={sub.href} className="science-sub-item disabled" title="Coming soon">
+                            <div className="science-sub-item-label">{sub.label}</div>
+                            <div className="science-sub-item-desc">{sub.desc}</div>
+                          </div>
+                        ) : (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className="science-sub-item"
+                            onClick={() => { science.setOpen(false); setHoveredScienceIdx(null); }}
+                          >
+                            <div className="science-sub-item-label">{sub.label}</div>
+                            <div className="science-sub-item-desc">{sub.desc}</div>
+                          </Link>
+                        )
+                      ))}
+                    </div>
                   </div>
                 ))}
                 <div className="science-coming-soon-bar">
                   <span className="science-coming-soon-dot" />
-                  All sections in development
+                  Visual Explainers in development
                 </div>
               </div>
             </li>
@@ -435,11 +623,8 @@ export default function Navbar() {
                 aria-expanded={about.open}
               >
                 About
-                <svg
-                  className={`nav-chevron${about.open ? " open" : ""}`}
-                  viewBox="0 0 16 16" fill="none"
-                >
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg className={`nav-chevron${about.open ? " open" : ""}`} viewBox="0 0 16 16" fill="none">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
 
