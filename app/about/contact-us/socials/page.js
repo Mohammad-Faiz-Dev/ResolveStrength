@@ -3,10 +3,10 @@ import SubPage from "@/components/SubPage";
 export const metadata = { title: "Socials — ResolveStrength" };
 
 const SOCIALS = [
-  { name: "X / Twitter", handle: "@ResolveStrength", url: "https://x.com/resolvestrength", desc: "Daily insights, research highlights, and community discussions." },
-  { name: "Instagram", handle: "@resolvestrength", url: "https://instagram.com/resolvestrength", desc: "Visual content, infographics, and behind-the-scenes of our research process." },
-  { name: "LinkedIn", handle: "ResolveStrength", url: "https://linkedin.com/company/resolvestrength", desc: "Professional updates, long-form posts, and partnership announcements." },
-  { name: "YouTube", handle: "ResolveStrength", url: "https://youtube.com/@resolvestrength", desc: "In-depth video breakdowns of the science behind strength and resilience." },
+  { name: "X / Twitter", handle: "@Resolve_Strength", url: "https://x.com/resolve_strength", desc: "Daily insights, research highlights, and community discussions." },
+  { name: "Instagram", handle: "@resolve_strength", url: "https://instagram.com/resolve_strength", desc: "Visual content, infographics, and behind-the-scenes of our research process." },
+  { name: "LinkedIn", handle: "Resolve_Strength", url: "https://linkedin.com/company/resolve_strength", desc: "Professional updates, long-form posts, and partnership announcements." },
+  { name: "YouTube", handle: "Resolve_Strength", url: "https://youtube.com/@resolve_strength", desc: "In-depth video breakdowns of the science behind strength and resilience." },
 ];
 
 export default function SocialsPage() {

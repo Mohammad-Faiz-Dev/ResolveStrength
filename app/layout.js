@@ -1,5 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 
 export const metadata = {
   title: "ResolveStrength — Build. Persist. Resolve.",
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
         <div className="page-shell">
           <Navbar />
           <main className="page-content">{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
