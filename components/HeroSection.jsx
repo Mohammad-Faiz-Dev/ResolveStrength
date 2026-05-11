@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { createClient } from "@/lib/supabase/client";
+
+const supabase = createClient();
 
 export default function HeroSection() {
   const [mode, setMode] = useState("signin"); // 'Login' | 'signup'
@@ -19,9 +22,22 @@ export default function HeroSection() {
     }, 800);
   };
 
-  const handleGoogle = () => {
-    setMessage({ type: "info", text: "Google OAuth will be wired via Supabase." });
-  };
+const handleGoogle = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: `${window.location.origin}/auth/callback`,
+      queryParams: {
+        access_type: 'offline',
+        prompt: 'consent',
+      },
+    },
+  });
+
+  if (error) {
+    setMessage({ type: "error", text: error.message });
+  }
+};
 
   return (
     <>
