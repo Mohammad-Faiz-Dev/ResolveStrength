@@ -1,4 +1,4 @@
-import ArticleSection from "@/Components/ArticleSection";
+import ArticleSection from "@/components/ArticleSection";
 
 export const metadata = {
   title: "Structural Edge | Strength Training | ResolveStrength",
