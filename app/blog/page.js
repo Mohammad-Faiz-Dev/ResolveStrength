@@ -187,6 +187,20 @@ export default function BlogHubPage() {
           align-items: center;
           gap: 6px;
         }
+        /* FIXED: icon container for SVG */
+        .hub-strip-cat-icon {
+          width: 16px;
+          height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          color: var(--accent-gold-dim);
+        }
+        .hub-strip-cat-icon svg {
+          width: 14px;
+          height: 14px;
+        }
         .hub-strip-title-text {
           font-family: var(--font-display);
           font-size: 0.95rem;
@@ -291,7 +305,12 @@ export default function BlogHubPage() {
                     className="hub-strip-card"
                   >
                     <div className="hub-strip-cat">
-                      <span>{cat.icon}</span>
+                      {/* FIXED: use dangerouslySetInnerHTML for SVG icon */}
+                      <span
+                        className="hub-strip-cat-icon"
+                        style={{ color: cat.accentColor }}
+                        dangerouslySetInnerHTML={{ __html: cat.icon }}
+                      />
                       {cat.label}
                     </div>
                     <div className="hub-strip-title-text">{post.title}</div>
