@@ -1,21 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function SignupPage() {
   const router = useRouter();
+  const supabase = createClient();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleGoogleAuth = () => {
+  const handleGoogleAuth = async () => {
     setIsLoading(true);
-    signIn("google", { callbackUrl: "/dashboard" });
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
+      },
+    });
+    if (error) {
+      setError(error.message);
+      setIsLoading(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -23,19 +33,19 @@ export default function SignupPage() {
     setIsLoading(true);
     setError("");
 
-    try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Registration failed. Please try again.");
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { full_name: name },
+      },
+    });
 
-      await signIn("credentials", { email, password, callbackUrl: "/dashboard" });
-    } catch (err) {
-      setError(err.message);
+    if (error) {
+      setError(error.message);
       setIsLoading(false);
+    } else {
+      router.push("/dashboard");
     }
   };
 
@@ -193,6 +203,7 @@ export default function SignupPage() {
       `}} />
 
       <div className="auth-page">
+        {/* Brand panel */}
         <div className="auth-brand-panel">
           <Link href="/" className="auth-logo">
             <div className="auth-logo-mark">R</div>
@@ -213,12 +224,16 @@ export default function SignupPage() {
             ].map((p) => (
               <div className="auth-pillar" key={p.title}>
                 <div className="auth-pillar-icon">{p.icon}</div>
-                <div className="auth-pillar-text"><strong>{p.title}</strong><span>{p.desc}</span></div>
+                <div className="auth-pillar-text">
+                  <strong>{p.title}</strong>
+                  <span>{p.desc}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Form panel */}
         <div className="auth-form-panel">
           <div className="auth-card">
             <div className="auth-card-eyebrow">Create account</div>
@@ -235,7 +250,12 @@ export default function SignupPage() {
               </div>
             )}
 
-            <button className="google-btn" onClick={handleGoogleAuth} disabled={isLoading} type="button">
+            <button
+              className="google-btn"
+              onClick={handleGoogleAuth}
+              disabled={isLoading}
+              type="button"
+            >
               <svg className="google-icon" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -246,25 +266,49 @@ export default function SignupPage() {
             </button>
 
             <div className="auth-divider">
-              <span className="auth-divider-line" /><span className="auth-divider-text">or</span><span className="auth-divider-line" />
+              <span className="auth-divider-line" />
+              <span className="auth-divider-text">or</span>
+              <span className="auth-divider-line" />
             </div>
 
             <form onSubmit={handleSubmit}>
               <div className="auth-fields">
                 <div className="field-group">
                   <label className="field-label" htmlFor="name">Full name</label>
-                  <input id="name" type="text" className="field-input" placeholder="Alex Morgan"
-                    value={name} onChange={(e) => setName(e.target.value)} required />
+                  <input
+                    id="name"
+                    type="text"
+                    className="field-input"
+                    placeholder="Alex Morgan"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="field-group">
                   <label className="field-label" htmlFor="email">Email address</label>
-                  <input id="email" type="email" className="field-input" placeholder="alex@example.com"
-                    value={email} onChange={(e) => setEmail(e.target.value)} required />
+                  <input
+                    id="email"
+                    type="email"
+                    className="field-input"
+                    placeholder="alex@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="field-group">
                   <label className="field-label" htmlFor="password">Password</label>
-                  <input id="password" type="password" className="field-input" placeholder="Min. 8 characters"
-                    value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} />
+                  <input
+                    id="password"
+                    type="password"
+                    className="field-input"
+                    placeholder="Min. 8 characters"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={8}
+                  />
                 </div>
               </div>
 

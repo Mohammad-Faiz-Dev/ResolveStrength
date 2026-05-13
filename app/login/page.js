@@ -1,20 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
+  const supabase = createClient();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleGoogleAuth = () => {
+  const handleGoogleAuth = async () => {
     setIsLoading(true);
-    signIn("google", { callbackUrl: "/dashboard" });
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
+      },
+    });
+    if (error) {
+      setError(error.message);
+      setIsLoading(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -22,17 +32,15 @@ export default function LoginPage() {
     setIsLoading(true);
     setError("");
 
-    const result = await signIn("credentials", {
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
-      redirect: false,
-      callbackUrl: "/dashboard",
     });
 
-    if (result?.error) {
+    if (error) {
       setError("Invalid email or password. Please try again.");
       setIsLoading(false);
-    } else if (result?.ok) {
+    } else {
       router.push("/dashboard");
     }
   };
@@ -195,6 +203,7 @@ export default function LoginPage() {
       `}} />
 
       <div className="auth-page">
+        {/* Brand panel */}
         <div className="auth-brand-panel">
           <Link href="/" className="auth-logo">
             <div className="auth-logo-mark">R</div>
@@ -213,12 +222,16 @@ export default function LoginPage() {
             ].map((p) => (
               <div className="auth-pillar" key={p.title}>
                 <div className="auth-pillar-icon">{p.icon}</div>
-                <div className="auth-pillar-text"><strong>{p.title}</strong><span>{p.desc}</span></div>
+                <div className="auth-pillar-text">
+                  <strong>{p.title}</strong>
+                  <span>{p.desc}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Form panel */}
         <div className="auth-form-panel">
           <div className="auth-card">
             <div className="auth-card-eyebrow">Sign in</div>
@@ -235,7 +248,12 @@ export default function LoginPage() {
               </div>
             )}
 
-            <button className="google-btn" onClick={handleGoogleAuth} disabled={isLoading} type="button">
+            <button
+              className="google-btn"
+              onClick={handleGoogleAuth}
+              disabled={isLoading}
+              type="button"
+            >
               <svg className="google-icon" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -246,35 +264,53 @@ export default function LoginPage() {
             </button>
 
             <div className="auth-divider">
-              <span className="auth-divider-line" /><span className="auth-divider-text">or</span><span className="auth-divider-line" />
+              <span className="auth-divider-line" />
+              <span className="auth-divider-text">or</span>
+              <span className="auth-divider-line" />
             </div>
 
             <form onSubmit={handleSubmit}>
               <div className="auth-fields">
                 <div className="field-group">
                   <label className="field-label" htmlFor="email">Email address</label>
-                  <input id="email" type="email" className="field-input" placeholder="alex@example.com"
-                    value={email} onChange={(e) => setEmail(e.target.value)} required />
+                  <input
+                    id="email"
+                    type="email"
+                    className="field-input"
+                    placeholder="alex@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="field-group">
                   <label className="field-label" htmlFor="password">Password</label>
-                  <input id="password" type="password" className="field-input" placeholder="Enter your password"
-                    value={password} onChange={(e) => setPassword(e.target.value)} required />
+                  <input
+                    id="password"
+                    type="password"
+                    className="field-input"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
                 </div>
               </div>
+
               <div className="auth-extras">
                 <label className="checkbox-label">
                   <input type="checkbox" className="checkbox-input" /> Remember me
                 </label>
                 <button type="button" className="link-btn">Forgot password?</button>
               </div>
+
               <button type="submit" className="submit-btn" disabled={isLoading}>
                 {isLoading ? <span className="spinner" /> : "Sign in"}
               </button>
             </form>
 
             <div className="auth-footer">
-              Don't have an account? <Link href="/signup">Sign up free</Link>
+              Don&apos;t have an account? <Link href="/signup">Sign up free</Link>
             </div>
             <div style={{ textAlign: "center" }}>
               <Link href="/" className="auth-back">
