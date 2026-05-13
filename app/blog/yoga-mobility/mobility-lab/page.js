@@ -1,17 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Mobility Lab | Yoga & Mobility | ResolveStrength",
-  description: "Unlock joint freedom and body awareness through movement practice.",
+  description: "Featured research on joint range of motion, control, and movement quality.",
 };
 
 export default function MobilityLabPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Mobility Lab"
       category="Yoga & Mobility"
-      blogTitle="Mobility Lab"
-      blogDescription="Unlock joint freedom and body awareness through movement practice."
-      featured={true}
+      categoryHref="/blog/yoga-mobility"
     />
   );
 }

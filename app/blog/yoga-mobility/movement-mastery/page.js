@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Movement Mastery | Yoga & Mobility | ResolveStrength",
-  description: "Unlock joint freedom and body awareness through movement practice.",
+  description: "Advanced motor control and movement pattern refinement.",
 };
 
 export default function MovementMasteryPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Movement Mastery"
       category="Yoga & Mobility"
-      blogTitle="Movement Mastery"
-      blogDescription="Unlock joint freedom and body awareness through movement practice."
+      categoryHref="/blog/yoga-mobility"
     />
   );
 }

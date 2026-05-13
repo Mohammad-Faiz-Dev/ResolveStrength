@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Rest & Adapt | Recovery & Wellness | ResolveStrength",
-  description: "Supercharge adaptation with sleep science and regenerative practice.",
+  description: "Deload weeks, supercompensation, and planned undertraining.",
 };
 
 export default function RestAndAdaptPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Rest & Adapt"
       category="Recovery & Wellness"
-      blogTitle="Rest & Adapt"
-      blogDescription="Supercharge adaptation with sleep science and regenerative practice."
+      categoryHref="/blog/recovery-wellness"
     />
   );
 }

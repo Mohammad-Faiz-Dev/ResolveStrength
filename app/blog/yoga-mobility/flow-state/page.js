@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Flow State | Yoga & Mobility | ResolveStrength",
-  description: "Unlock joint freedom and body awareness through movement practice.",
+  description: "Breathwork, nervous system regulation, and parasympathetic training.",
 };
 
 export default function FlowStatePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Flow State"
       category="Yoga & Mobility"
-      blogTitle="Flow State"
-      blogDescription="Unlock joint freedom and body awareness through movement practice."
+      categoryHref="/blog/yoga-mobility"
     />
   );
 }

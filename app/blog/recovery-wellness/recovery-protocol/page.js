@@ -1,17 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Recovery Protocol | Recovery & Wellness | ResolveStrength",
-  description: "Supercharge adaptation with sleep science and regenerative practice.",
+  description: "Featured sleep, HRV, and regeneration science for athletic longevity.",
 };
 
 export default function RecoveryProtocolPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Recovery Protocol"
       category="Recovery & Wellness"
-      blogTitle="Recovery Protocol"
-      blogDescription="Supercharge adaptation with sleep science and regenerative practice."
-      featured={true}
+      categoryHref="/blog/recovery-wellness"
     />
   );
 }

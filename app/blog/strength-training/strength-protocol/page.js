@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
-  title: "Strength Protocol | Strength Training | ResolveStrength",
-  description: "Build raw power and structural resilience through science-backed programming.",
+  title: "Structural Edge | Strength Training | ResolveStrength",
+  description: "Connective tissue health and injury resilience.",
 };
 
-export default function StrengthProtocolPage() {
+export default function StructuralEdgePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Structural Edge"
       category="Strength Training"
-      blogTitle="Strength Protocol"
-      blogDescription="Build raw power and structural resilience through science-backed programming."
+      categoryHref="/blog/strength-training"
     />
   );
 }

@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Regenerate | Recovery & Wellness | ResolveStrength",
-  description: "Supercharge adaptation with sleep science and regenerative practice.",
+  description: "Cold exposure, heat therapy, and contrast protocols.",
 };
 
 export default function RegeneratePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Regenerate"
       category="Recovery & Wellness"
-      blogTitle="Regenerate"
-      blogDescription="Supercharge adaptation with sleep science and regenerative practice."
+      categoryHref="/blog/recovery-wellness"
     />
   );
 }

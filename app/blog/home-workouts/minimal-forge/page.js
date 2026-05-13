@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Minimal Forge | Home Workouts | ResolveStrength",
-  description: "Full-body programming designed for any space with minimal equipment.",
+  description: "Bodyweight progressions and micro-equipment strategies.",
 };
 
 export default function MinimalForgePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Minimal Forge"
       category="Home Workouts"
-      blogTitle="Minimal Forge"
-      blogDescription="Full-body programming designed for any space with minimal equipment."
+      categoryHref="/blog/home-workouts"
     />
   );
 }

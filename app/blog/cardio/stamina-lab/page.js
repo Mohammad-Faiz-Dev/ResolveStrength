@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Stamina Lab | Cardio & Endurance | ResolveStrength",
-  description: "Expand your aerobic ceiling with evidence-based endurance training.",
+  description: "HIIT, sprint intervals, and anaerobic capacity expansion.",
 };
 
 export default function StaminaLabPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Stamina Lab"
       category="Cardio & Endurance"
-      blogTitle="Stamina Lab"
-      blogDescription="Expand your aerobic ceiling with evidence-based endurance training."
+      categoryHref="/blog/cardio"
     />
   );
 }

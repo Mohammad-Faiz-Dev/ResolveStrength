@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Aerobic Forge | Cardio & Endurance | ResolveStrength",
-  description: "Expand your aerobic ceiling with evidence-based endurance training.",
+  description: "Zone 2 training, cardiac output, and metabolic conditioning.",
 };
 
 export default function AerobicForgePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Aerobic Forge"
       category="Cardio & Endurance"
-      blogTitle="Aerobic Forge"
-      blogDescription="Expand your aerobic ceiling with evidence-based endurance training."
+      categoryHref="/blog/cardio"
     />
   );
 }

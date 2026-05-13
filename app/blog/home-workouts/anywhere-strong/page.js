@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Anywhere Strong | Home Workouts | ResolveStrength",
-  description: "Full-body programming designed for any space with minimal equipment.",
+  description: "Outdoor and portable training systems for nomadic athletes.",
 };
 
 export default function AnywhereStrongPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Anywhere Strong"
       category="Home Workouts"
-      blogTitle="Anywhere Strong"
-      blogDescription="Full-body programming designed for any space with minimal equipment."
+      categoryHref="/blog/home-workouts"
     />
   );
 }

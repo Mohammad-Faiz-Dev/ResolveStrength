@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Iron Core | Strength Training | ResolveStrength",
-  description: "Build raw power and structural resilience through science-backed programming.",
+  description: "Core stability and anti-rotation training systems.",
 };
 
 export default function IronCorePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Iron Core"
       category="Strength Training"
-      blogTitle="Iron Core"
-      blogDescription="Build raw power and structural resilience through science-backed programming."
+      categoryHref="/blog/strength-training"
     />
   );
 }

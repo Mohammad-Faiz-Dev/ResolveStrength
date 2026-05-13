@@ -1,17 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Forge | Strength Training | ResolveStrength",
-  description: "Build raw power and structural resilience through science-backed programming.",
+  description: "Featured series on elite strength development and periodization.",
 };
 
 export default function ForgePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Forge"
       category="Strength Training"
-      blogTitle="Forge"
-      blogDescription="Build raw power and structural resilience through science-backed programming."
-      featured={true}
+      categoryHref="/blog/strength-training"
     />
   );
 }

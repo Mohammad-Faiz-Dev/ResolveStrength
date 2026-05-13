@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Joint Intelligence | Yoga & Mobility | ResolveStrength",
-  description: "Unlock joint freedom and body awareness through movement practice.",
+  description: "Understanding joint architecture for longevity and performance.",
 };
 
 export default function JointIntelligencePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Joint Intelligence"
       category="Yoga & Mobility"
-      blogTitle="Joint Intelligence"
-      blogDescription="Unlock joint freedom and body awareness through movement practice."
+      categoryHref="/blog/yoga-mobility"
     />
   );
 }

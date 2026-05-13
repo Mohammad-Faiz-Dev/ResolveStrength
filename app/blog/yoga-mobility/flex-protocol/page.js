@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Flex Protocol | Yoga & Mobility | ResolveStrength",
-  description: "Unlock joint freedom and body awareness through movement practice.",
+  description: "Active flexibility training and dynamic stretching systems.",
 };
 
 export default function FlexProtocolPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Flex Protocol"
       category="Yoga & Mobility"
-      blogTitle="Flex Protocol"
-      blogDescription="Unlock joint freedom and body awareness through movement practice."
+      categoryHref="/blog/yoga-mobility"
     />
   );
 }

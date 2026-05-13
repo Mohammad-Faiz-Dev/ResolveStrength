@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Space Protocol | Home Workouts | ResolveStrength",
-  description: "Full-body programming designed for any space with minimal equipment.",
+  description: "Small-space programming for apartment and travel training.",
 };
 
 export default function SpaceProtocolPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Space Protocol"
       category="Home Workouts"
-      blogTitle="Space Protocol"
-      blogDescription="Full-body programming designed for any space with minimal equipment."
+      categoryHref="/blog/home-workouts"
     />
   );
 }

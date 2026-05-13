@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Rebuild | Recovery & Wellness | ResolveStrength",
-  description: "Supercharge adaptation with sleep science and regenerative practice.",
+  description: "Returning from injury and rebuilding tissue resilience.",
 };
 
 export default function RebuildPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Rebuild"
       category="Recovery & Wellness"
-      blogTitle="Rebuild"
-      blogDescription="Supercharge adaptation with sleep science and regenerative practice."
+      categoryHref="/blog/recovery-wellness"
     />
   );
 }

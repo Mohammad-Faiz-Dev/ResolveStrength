@@ -1,17 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Endurance Edge | Cardio & Endurance | ResolveStrength",
-  description: "Expand your aerobic ceiling with evidence-based endurance training.",
+  description: "Featured coverage of aerobic capacity, VO₂ max, and engine-building protocols.",
 };
 
 export default function EnduranceEdgePage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Endurance Edge"
       category="Cardio & Endurance"
-      blogTitle="Endurance Edge"
-      blogDescription="Expand your aerobic ceiling with evidence-based endurance training."
-      featured={true}
+      categoryHref="/blog/cardio"
     />
   );
 }

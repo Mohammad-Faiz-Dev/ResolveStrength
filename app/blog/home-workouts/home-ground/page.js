@@ -1,17 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Home Ground | Home Workouts | ResolveStrength",
-  description: "Full-body programming designed for any space with minimal equipment.",
+  description: "Featured minimal-equipment training for maximum adaptation at home.",
 };
 
 export default function HomeGroundPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Home Ground"
       category="Home Workouts"
-      blogTitle="Home Ground"
-      blogDescription="Full-body programming designed for any space with minimal equipment."
-      featured={true}
+      categoryHref="/blog/home-workouts"
     />
   );
 }

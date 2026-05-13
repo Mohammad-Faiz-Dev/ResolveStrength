@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Raw Power | Strength Training | ResolveStrength",
-  description: "Build raw power and structural resilience through science-backed programming.",
+  description: "Explosive strength, neural drive, and rate of force development.",
 };
 
 export default function RawPowerPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Raw Power"
       category="Strength Training"
-      blogTitle="Raw Power"
-      blogDescription="Build raw power and structural resilience through science-backed programming."
+      categoryHref="/blog/strength-training"
     />
   );
 }

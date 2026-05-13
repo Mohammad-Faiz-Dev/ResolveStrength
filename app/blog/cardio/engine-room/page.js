@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "Engine Room | Cardio & Endurance | ResolveStrength",
-  description: "Expand your aerobic ceiling with evidence-based endurance training.",
+  description: "The physiology of fatigue resistance and work capacity.",
 };
 
 export default function EngineRoomPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="Engine Room"
       category="Cardio & Endurance"
-      blogTitle="Engine Room"
-      blogDescription="Expand your aerobic ceiling with evidence-based endurance training."
+      categoryHref="/blog/cardio"
     />
   );
 }

@@ -1,16 +1,16 @@
-import ArticleSection from "@/Components/ArticleSection";
+import UnderConstruction from "../../components/UnderConstruction";
 
 export const metadata = {
   title: "No Gym Required | Home Workouts | ResolveStrength",
-  description: "Full-body programming designed for any space with minimal equipment.",
+  description: "Philosophy and proof that elite fitness doesn't need a membership.",
 };
 
 export default function NoGymRequiredPage() {
   return (
-    <ArticleSection
+    <UnderConstruction
+      title="No Gym Required"
       category="Home Workouts"
-      blogTitle="No Gym Required"
-      blogDescription="Full-body programming designed for any space with minimal equipment."
+      categoryHref="/blog/home-workouts"
     />
   );
 }
