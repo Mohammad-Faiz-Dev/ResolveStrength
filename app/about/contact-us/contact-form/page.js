@@ -18,7 +18,7 @@ export default function ContactFormPage() {
       page="contact-form"
       eyebrow="Contact Us · Form"
       title="Send Us a Message"
-      description="Use the form below and we'll get back to you as soon as we can — usually within 48 hours."
+      description="Our team reviews every submission. For faster response on technical issues, please use the support email directly."
     >
       <style>{`
         .contact-form-wrap {
@@ -81,33 +81,46 @@ export default function ContactFormPage() {
       <div className="contact-form-wrap">
         {sent ? (
           <div className="cf-success">
-            ✓ Message sent! We'll be in touch within 48 hours. Thank you for reaching out.
+            ✓ Message received. Our team will respond within 48 business hours. If your inquiry is urgent, please contact support@resolvestrength.com directly.
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
               <div className="cf-row">
-                <label className="cf-label">Your Name</label>
-                <input className="cf-input" type="text" placeholder="Jane Smith" required
+                <label className="cf-label">Full Name</label>
+                <input className="cf-input" type="text" placeholder="Dr. Jane Smith" required
                   value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
               </div>
               <div className="cf-row">
-                <label className="cf-label">Email Address</label>
-                <input className="cf-input" type="email" placeholder="you@example.com" required
+                <label className="cf-label">Work Email</label>
+                <input className="cf-input" type="email" placeholder="jane@institution.com" required
                   value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
               </div>
             </div>
             <div className="cf-row">
-              <label className="cf-label">Subject</label>
-              <input className="cf-input" type="text" placeholder="What's this about?" required
-                value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} />
+              <label className="cf-label">Inquiry Type</label>
+              <select 
+                className="cf-input" 
+                required
+                value={form.subject} 
+                onChange={e => setForm({ ...form, subject: e.target.value })}
+                style={{ cursor: "pointer" }}
+              >
+                <option value="">Select an option...</option>
+                <option value="general">General Enquiry</option>
+                <option value="partnerships">Partnership / Enterprise</option>
+                <option value="press">Press & Media</option>
+                <option value="research">Research Collaboration</option>
+                <option value="careers">Careers</option>
+                <option value="other">Other</option>
+              </select>
             </div>
             <div className="cf-row">
               <label className="cf-label">Message</label>
-              <textarea className="cf-textarea" placeholder="Tell us more…" required
+              <textarea className="cf-textarea" placeholder="Please describe your inquiry in detail..." required
                 value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
             </div>
-            <button className="cf-submit" type="submit">Send Message →</button>
+            <button className="cf-submit" type="submit">Submit Inquiry →</button>
           </form>
         )}
       </div>

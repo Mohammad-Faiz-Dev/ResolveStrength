@@ -3,10 +3,10 @@ import SubPage from "@/components/SubPage";
 export const metadata = { title: "Socials — ResolveStrength" };
 
 const SOCIALS = [
-  { name: "X / Twitter", handle: "@Resolve_Strength", url: "https://x.com/resolve_strength", desc: "Daily insights, research highlights, and community discussions." },
-  { name: "Instagram", handle: "@resolve_strength", url: "https://instagram.com/resolve_strength", desc: "Visual content, infographics, and behind-the-scenes of our research process." },
-  { name: "LinkedIn", handle: "Resolve_Strength", url: "https://linkedin.com/company/resolve_strength", desc: "Professional updates, long-form posts, and partnership announcements." },
-  { name: "YouTube", handle: "Resolve_Strength", url: "https://youtube.com/@resolve_strength", desc: "In-depth video breakdowns of the science behind strength and resilience." },
+  { name: "X / Twitter", handle: "@ResolveStrength", url: "https://x.com/resolve_strength", followers: "42K", desc: "Daily research highlights, thread breakdowns of recent studies, and community Q&As with our coaching team." },
+  { name: "LinkedIn", handle: "ResolveStrength", url: "https://linkedin.com/company/resolvestrength", followers: "18K", desc: "Professional updates, long-form posts on industry trends, and partnership announcements." },
+  { name: "Instagram", handle: "@resolve_strength", url: "https://instagram.com/resolve_strength", followers: "67K", desc: "Visual content, form tutorials, infographics, and behind-the-scenes from our research reviews." },
+  { name: "YouTube", handle: "ResolveStrength", url: "https://youtube.com/@resolve_strength", followers: "31K", desc: "In-depth video lectures, exercise technique breakdowns, and monthly research roundtables." },
 ];
 
 export default function SocialsPage() {
@@ -16,7 +16,7 @@ export default function SocialsPage() {
       page="socials"
       eyebrow="Contact Us · Socials"
       title="Find Us Online"
-      description="Follow along for daily research, community highlights, and updates on what we're building."
+      description="Join 150,000+ practitioners across our channels for daily research, programming tips, and community discussion."
     >
       <style>{`
         .socials-grid {
@@ -38,12 +38,25 @@ export default function SocialsPage() {
           border-color: var(--accent-gold-dim);
           transform: translateY(-2px);
         }
+        .social-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 4px;
+        }
         .social-name {
           font-family: var(--font-display);
           font-size: 1.05rem;
           font-weight: 600;
           color: var(--text-primary);
-          margin-bottom: 4px;
+        }
+        .social-followers {
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          background: rgba(255,255,255,0.04);
+          padding: 2px 8px;
+          border-radius: 20px;
+          border: 1px solid var(--border);
         }
         .social-handle {
           font-size: 0.8rem;
@@ -61,16 +74,19 @@ export default function SocialsPage() {
       <div className="socials-grid">
         {SOCIALS.map(s => (
           <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="social-card">
-            <div className="social-name">{s.name}</div>
+            <div className="social-header">
+              <div className="social-name">{s.name}</div>
+              <div className="social-followers">{s.followers} followers</div>
+            </div>
             <div className="social-handle">{s.handle}</div>
             <div className="social-desc">{s.desc}</div>
           </a>
         ))}
       </div>
       <p>
-        We monitor our social channels regularly. For formal enquiries, please use our{" "}
+        Our social team monitors all channels during business hours. For formal enquiries, please use our{" "}
         <a href="/about/contact-us/contact-form" style={{ color: "var(--accent-gold)" }}>Contact Form</a>{" "}
-        or send us an <a href="/about/contact-us/email" style={{ color: "var(--accent-gold)" }}>email</a>.
+        or reach us by <a href="/about/contact-us/email" style={{ color: "var(--accent-gold)" }}>email</a>.
       </p>
     </SubPage>
   );

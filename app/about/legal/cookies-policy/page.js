@@ -9,40 +9,40 @@ export default function CookiesPolicyPage() {
       page="cookies-policy"
       eyebrow="Legal · Cookies"
       title="Cookies Policy"
-      description="How and why we use cookies on ResolveStrength, and how you can control them."
+      description="How ResolveStrength uses cookies, tracking technologies, and user controls."
     >
       <h2>What Are Cookies?</h2>
       <p>
-        Cookies are small text files stored on your device when you visit a website. They serve a range of functions — from keeping you logged in between sessions to helping us understand how people navigate the platform.
+        Cookies are small text files stored on your device that enable core functionality, remember preferences, and help us understand how users interact with the platform. We also use local storage and similar technologies for session management and performance monitoring.
       </p>
 
-      <h2>Cookies We Use</h2>
+      <h2>Cookie Categories</h2>
       <ul>
-        <li><strong style={{ color: "var(--text-primary)" }}>Essential Cookies:</strong> Required for core platform functionality including authentication, session management, and security. These cannot be disabled.</li>
-        <li><strong style={{ color: "var(--text-primary)" }}>Preference Cookies:</strong> Store your settings and preferences, such as display mode or language, so you don't have to re-enter them on each visit.</li>
-        <li><strong style={{ color: "var(--text-primary)" }}>Analytics Cookies:</strong> Help us understand aggregate usage patterns. We use privacy-respecting analytics tools that do not share data with third-party advertisers.</li>
-        <li><strong style={{ color: "var(--text-primary)" }}>Performance Cookies:</strong> Monitor page load times and error rates to help us improve the platform experience.</li>
+        <li><strong style={{ color: "var(--text-primary)" }}>Essential (Required):</strong> Authentication, session management, CSRF protection, and security monitoring. These cannot be disabled and expire when you log out or close your browser.</li>
+        <li><strong style={{ color: "var(--text-primary)" }}>Functional:</strong> Remember your preferences (dark mode, content filters, dashboard layout) across sessions. Retention: 12 months.</li>
+        <li><strong style={{ color: "var(--text-primary)" }}>Analytics:</strong> Aggregate usage patterns, feature adoption rates, and funnel analysis. We use Plausible Analytics (privacy-focused, no cross-site tracking) and self-hosted PostHog. Retention: 24 months.</li>
+        <li><strong style={{ color: "var(--text-primary)" }}>Performance:</strong> Error tracking via Sentry and load-time monitoring. These help us identify and fix platform issues. Retention: 90 days.</li>
       </ul>
 
-      <h2>Third-Party Cookies</h2>
+      <h2>Third-Party Processors</h2>
       <p>
-        We do not permit third-party advertising cookies on our platform. Some embedded content (such as videos or interactive tools) may set their own cookies; we will always notify you before loading such content.
+        We do not permit third-party advertising cookies. Our analytics and error-tracking tools are configured to minimize data collection. Embedded video content (YouTube lectures) loads only after explicit user consent and uses YouTube's privacy-enhanced mode.
       </p>
 
-      <h2>Managing Your Cookie Preferences</h2>
+      <h2>User Controls</h2>
       <p>
-        You can manage cookie preferences through your browser settings or through our cookie preference centre, accessible via the footer of every page. Note that disabling certain cookies may affect platform functionality.
+        You can manage cookie preferences through our cookie preference centre (footer of every page) or via your browser settings. Disabling functional cookies will reset your preferences on each visit. Disabling analytics cookies does not affect platform functionality.
       </p>
 
-      <h2>Cookie Retention</h2>
+      <h2>Retention & Deletion</h2>
       <p>
-        Session cookies are deleted when you close your browser. Persistent cookies have a maximum retention period of 12 months, after which they are automatically deleted.
+        Session cookies are deleted on browser close. Persistent cookies have a maximum retention of 24 months. You can request complete deletion of all stored data through your account settings or by emailing privacy@resolvestrength.com.
       </p>
 
       <div className="divider" />
       <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
-        Last updated: January 2025. For questions, contact{" "}
-        <span style={{ color: "var(--accent-gold)" }}>legal@resolvestrength.com</span>.
+        Last updated: May 2026. This policy is reviewed annually by our data protection officer. Questions? Contact{" "}
+        <span style={{ color: "var(--accent-gold)" }}>privacy@resolvestrength.com</span>.
       </p>
     </SubPage>
   );
