@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { IMAGE_PLACEHOLDER_ICON } from "./blogData";
+import { IMAGE_PLACEHOLDER_ICON } from "./blogdata";
 
 /**
  * BlogCard
@@ -13,11 +13,12 @@ import { IMAGE_PLACEHOLDER_ICON } from "./blogData";
  *  - categorySlug: string — used to build the href
  */
 export default function BlogCard({ post, categorySlug }) {
-  const href = `/blog/${categorySlug}/${post.slug}`;
+  const href = `/articles/${categorySlug}/${post.slug}`;
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .blog-card {
           background: var(--bg-card);
           border: 1px solid var(--border);
@@ -205,7 +206,7 @@ export default function BlogCard({ post, categorySlug }) {
             <span className="blog-card-link">
               Read article
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </div>

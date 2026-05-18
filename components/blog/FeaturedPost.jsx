@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { IMAGE_PLACEHOLDER_ICON } from "./blogData";
+import { IMAGE_PLACEHOLDER_ICON } from "./blogdata";
 
 /**
  * FeaturedPost
@@ -13,11 +13,12 @@ import { IMAGE_PLACEHOLDER_ICON } from "./blogData";
  *  - categorySlug: string
  */
 export default function FeaturedPost({ post, categorySlug }) {
-  const href = `/blog/${categorySlug}/${post.slug}`;
+  const href = `/articles/${categorySlug}/${post.slug}`;
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .featured-post {
           background: var(--bg-card);
           border: 1px solid var(--border);
@@ -226,7 +227,7 @@ export default function FeaturedPost({ post, categorySlug }) {
             <Link href={href} className="featured-read-link">
               Read article
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </div>

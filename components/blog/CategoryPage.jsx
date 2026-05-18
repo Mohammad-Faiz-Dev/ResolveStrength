@@ -3,7 +3,7 @@
 import Link from "next/link";
 import FeaturedPost from "./FeaturedPost";
 import BlogCard from "./BlogCard";
-import { CATEGORIES } from "./blogData";
+import { CATEGORIES } from "./blogdata";
 
 /**
  * CategoryPage
@@ -20,7 +20,8 @@ export default function CategoryPage({ categorySlug, data }) {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .category-page {
           min-height: 100vh;
           padding-bottom: 6rem;
@@ -241,7 +242,7 @@ export default function CategoryPage({ categorySlug, data }) {
             <nav className="category-breadcrumb">
               <Link href="/">Home</Link>
               <span className="category-breadcrumb-sep">/</span>
-              <Link href="/blog">Blog</Link>
+              <Link href="/articles">Articles</Link>
               <span className="category-breadcrumb-sep">/</span>
               <span style={{ color: "var(--text-secondary)" }}>{category.label}</span>
             </nav>
@@ -303,7 +304,7 @@ function OtherCategories({ currentSlug }) {
       <h3 className="other-cats-header">Explore Other Topics</h3>
       <div className="other-cats-grid">
         {others.map((cat) => (
-          <Link key={cat.slug} href={`/blog/${cat.slug}`} className="other-cat-pill">
+          <Link key={cat.slug} href={`/articles/${cat.slug}`} className="other-cat-pill">
             <span
               className="other-cat-pill-icon"
               style={{ color: cat.accentColor }}

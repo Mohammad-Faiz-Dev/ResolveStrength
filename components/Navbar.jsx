@@ -111,67 +111,67 @@ const aboutDropdown = {
 const articlesDropdown = [
   {
     label: "Strength Training",
-    href: "/blog/strength-training",
+    href: "/articles/strength_trainig",
     desc: "Build raw power and structural resilience through science-backed programming.",
     icon: Icons.strength,
     sub: [
-      { label: "Forge", href: "/blog/strength-training/forge", featured: true },
-      { label: "Iron Core", href: "/blog/strength-training/iron-core" },
-      { label: "Strength Protocol", href: "/blog/strength-training/strength-protocol" },
-      { label: "Raw Power", href: "/blog/strength-training/raw-power" },
-      { label: "Structural Edge", href: "/blog/strength-training/structural-edge" },
+      { label: "Forge", href: "/articles/strength_trainig/forge", featured: true },
+      { label: "Iron Core", href: "/articles/strength_trainig/iron_core" },
+      { label: "Strength Protocol", href: "/articles/strength_trainig/strength_protocol" },
+      { label: "Raw Power", href: "/articles/strength_trainig/raw_power" },
+      { label: "Structural Edge", href: "/articles/strength_trainig/structural_edge" },
     ],
   },
   {
     label: "Cardio & Endurance",
-    href: "/blog/cardio",
+    href: "/articles/cardio_&_endurance",
     desc: "Expand your aerobic ceiling with evidence-based endurance training.",
     icon: Icons.cardio,
     sub: [
-      { label: "Endurance Edge", href: "/blog/cardio/endurance-edge", featured: true },
-      { label: "Aerobic Forge", href: "/blog/cardio/aerobic-forge" },
-      { label: "Distance Protocol", href: "/blog/cardio/distance-protocol" },
-      { label: "Stamina Lab", href: "/blog/cardio/stamina-lab" },
-      { label: "Engine Room", href: "/blog/cardio/engine-room" },
+      { label: "Endurance Edge", href: "/articles/cardio_&_endurance/endurance_edge", featured: true },
+      { label: "Aerobic Forge", href: "/articles/cardio_&_endurance/aerobic_forge" },
+      { label: "Distance Protocol", href: "/articles/cardio_&_endurance/distance_protocol" },
+      { label: "Stamina Lab", href: "/articles/cardio_&_endurance/stamina_lab" },
+      { label: "Engine Room", href: "/articles/cardio_&_endurance/engine_room" },
     ],
   },
   {
     label: "Yoga & Mobility",
-    href: "/blog/yoga-mobility",
+    href: "/articles/yoga_&_mobility",
     desc: "Unlock joint freedom and body awareness through movement practice.",
     icon: Icons.yoga,
     sub: [
-      { label: "Mobility Lab", href: "/blog/yoga-mobility/mobility-lab", featured: true },
-      { label: "Flow State", href: "/blog/yoga-mobility/flow-state" },
-      { label: "Joint Intelligence", href: "/blog/yoga-mobility/joint-intelligence" },
-      { label: "Movement Mastery", href: "/blog/yoga-mobility/movement-mastery" },
-      { label: "Flex Protocol", href: "/blog/yoga-mobility/flex-protocol" },
+      { label: "Mobility Lab", href: "/articles/yoga_&_mobility/mobility_lab", featured: true },
+      { label: "Flow State", href: "/articles/yoga_&_mobility/flow_state" },
+      { label: "Joint Intelligence", href: "/articles/yoga_&_mobility/joint_intelligence" },
+      { label: "Movement Mastery", href: "/articles/yoga_&_mobility/movement_mastery" },
+      { label: "Flex Protocol", href: "/articles/yoga_&_mobility/flex_protocol" },
     ],
   },
   {
     label: "Home Workouts",
-    href: "/blog/home-workouts",
+    href: "/articles/home_workouts",
     desc: "Full-body programming designed for any space with minimal equipment.",
     icon: Icons.home,
     sub: [
-      { label: "Home Ground", href: "/blog/home-workouts/home-ground", featured: true },
-      { label: "Minimal Forge", href: "/blog/home-workouts/minimal-forge" },
-      { label: "Space Protocol", href: "/blog/home-workouts/space-protocol" },
-      { label: "No Gym Required", href: "/blog/home-workouts/no-gym-required" },
-      { label: "Anywhere Strong", href: "/blog/home-workouts/anywhere-strong" },
+      { label: "Home Ground", href: "/articles/home_workouts/home_ground", featured: true },
+      { label: "Minimal Forge", href: "/articles/home_workouts/minimal_forge" },
+      { label: "Space Protocol", href: "/articles/home_workouts/space_protocol" },
+      { label: "No Gym Required", href: "/articles/home_workouts/no_gym_required" },
+      { label: "Anywhere Strong", href: "/articles/home_workouts/anywhere_strong" },
     ],
   },
   {
     label: "Recovery & Wellness",
-    href: "/blog/recovery-wellness",
+    href: "/articles/recovery_&_wellness",
     desc: "Supercharge adaptation with sleep science and regenerative practice.",
     icon: Icons.recovery,
     sub: [
-      { label: "Recovery Protocol", href: "/blog/recovery-wellness/recovery-protocol", featured: true },
-      { label: "Regenerate", href: "/blog/recovery-wellness/regenerate" },
-      { label: "Rest & Adapt", href: "/blog/recovery-wellness/rest-and-adapt" },
-      { label: "Wellness Core", href: "/blog/recovery-wellness/wellness-core" },
-      { label: "Rebuild", href: "/blog/recovery-wellness/rebuild" },
+      { label: "Recovery Protocol", href: "/articles/recovery_&_wellness/recovery_protocol", featured: true },
+      { label: "Regenerate", href: "/articles/recovery_&_wellness/regenerate" },
+      { label: "Rest & Adapt", href: "/articles/recovery_&_wellness/rest_&_adapt" },
+      { label: "Wellness Core", href: "/articles/recovery_&_wellness/wellness_core" },
+      { label: "Rebuild", href: "/articles/recovery_&_wellness/rebuild" },
     ],
   },
 ];
@@ -273,7 +273,7 @@ export default function Navbar() {
           color: var(--text-primary);
           letter-spacing: -0.01em;
         }
-        .brand-name span { color: var(--gold); }
+        .brand-name span { color: #c8a96e; }
 
         /* Nav links */
         .nav-links {
@@ -748,9 +748,9 @@ export default function Navbar() {
           padding: 7px 16px;
           font-size: 0.84rem;
           font-weight: 600;
-          color: var(--bg-deep);
+          color: #0b0e0d;
           border-radius: var(--radius);
-          background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+          background: linear-gradient(135deg, #c8a96e 0%, #e0c98a 100%);
           transition: opacity 0.18s, transform 0.18s, box-shadow 0.18s;
           cursor: pointer;
           font-family: var(--font-body);
