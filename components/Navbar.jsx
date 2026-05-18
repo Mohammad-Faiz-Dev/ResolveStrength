@@ -963,7 +963,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="nav-cta">
             <Link href="/login" className="btn-nav-signin">Log In</Link>
-            <Link href="/login" className="btn-nav-join">Join Free</Link>
+            <Link href="/signup" className="btn-nav-join">Join Free</Link>
           </div>
         </div>
       </nav>
