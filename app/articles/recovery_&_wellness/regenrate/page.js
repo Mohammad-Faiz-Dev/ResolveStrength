@@ -15,6 +15,7 @@ export default function Page() {
       title="Regenrate: Regeneration Strategies for Hard Trainers"
       subtitle="Advanced recovery modalities explained — what works, what is marketing, and what matters."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/regenerate.webp"
       date="Coming soon"
     />
   );

@@ -69,6 +69,7 @@ export const BLOG_DATA = {
         readTime: "8 min",
         title: "Raw Power: Developing Explosive Strength",
         excerpt: "The distinction between strength and power, and how to train both effectively.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/raw_power.webp",
       },
       {
         id: "structural_edge",
@@ -78,6 +79,7 @@ export const BLOG_DATA = {
         readTime: "8 min",
         title: "Structural Edge: Anatomy, Leverage, and Training Smarter",
         excerpt: "How your body structure affects exercise selection and where to focus your energy.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/structural_edge.webp",
       },
       {
         id: "iron_core",
@@ -87,6 +89,7 @@ export const BLOG_DATA = {
         readTime: "7 min",
         title: "Iron Core: Building a Foundation of Functional Strength",
         excerpt: "Core training beyond crunches — how true trunk stability transfers to every lift.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/iron_core.webp",
       },
       {
         id: "strength_protocol",
@@ -96,6 +99,7 @@ export const BLOG_DATA = {
         readTime: "12 min",
         title: "Strength Protocol: Designing Training That Actually Works",
         excerpt: "From rep ranges to rest periods — the variables that separate effective programming from guesswork.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/strength_protocol.webp",
       },
     ],
   },
@@ -120,6 +124,7 @@ export const BLOG_DATA = {
         readTime: "6 min",
         title: "Find Your Endurance Edge",
         excerpt: "Science-backed strategies to push past perceived limits and sustain effort longer.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/find_your_endurance_edge.webp",
       },
       {
         id: "stamina_lab",
@@ -129,6 +134,7 @@ export const BLOG_DATA = {
         readTime: "8 min",
         title: "The Stamina Lab: Building Work Capacity That Lasts",
         excerpt: "Methodical training protocols designed to expand your endurance ceiling week by week.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/the_stamina_lab.webp",
       },
       {
         id: "aerobic_forge",
@@ -138,6 +144,7 @@ export const BLOG_DATA = {
         readTime: "7 min",
         title: "Build Your Aerobic Base from the Ground Up",
         excerpt: "How progressive cardio training reshapes your cardiovascular system for lasting endurance.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/aerobic_base.webp",
       },
       {
         id: "distance_protocol",
@@ -147,6 +154,7 @@ export const BLOG_DATA = {
         readTime: "9 min",
         title: "The Distance Protocol: Training for Long-Form Endurance",
         excerpt: "A structured approach to building mileage and stamina for distance events.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/the_distance_protocol.webp",
       },
     ],
   },
@@ -171,6 +179,7 @@ export const BLOG_DATA = {
         readTime: "6 min",
         title: "Flex Protocol: A Science-Based Approach to Flexibility",
         excerpt: "Stretching, PNF, and loaded mobility — what the evidence says about getting more flexible.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/flex_protocol.webp",
       },
       {
         id: "joint_intelligence",
@@ -180,6 +189,7 @@ export const BLOG_DATA = {
         readTime: "8 min",
         title: "Joint Intelligence: Training Healthy, Resilient Joints",
         excerpt: "Why joint health is the foundation of longevity in training — and how to build it.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/joint_intelligence.webp",
       },
       {
         id: "flow_state",
@@ -189,6 +199,7 @@ export const BLOG_DATA = {
         readTime: "7 min",
         title: "Flow State: Using Yoga to Enhance Athletic Performance",
         excerpt: "How a consistent yoga practice builds movement quality and body awareness serious athletes need.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/flow_state.webp",
       },
       {
         id: "movement_mastery",
@@ -198,6 +209,7 @@ export const BLOG_DATA = {
         readTime: "7 min",
         title: "Movement Mastery: From Stiffness to Fluidity",
         excerpt: "A progressive system for reclaiming full range of motion and moving pain-free.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/movement_mastery.webp",
       },
     ],
   },
@@ -222,6 +234,7 @@ export const BLOG_DATA = {
         readTime: "7 min",
         title: "Minimal Forge: Maximum Results with Minimum Equipment",
         excerpt: "Resistance bands, a pull-up bar, and a floor — here is everything you need.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/home_workouts/minimal_forge.webp",
       },
       {
         id: "anywhere_strong",
@@ -231,6 +244,7 @@ export const BLOG_DATA = {
         readTime: "6 min",
         title: "Anywhere Strong: Train Without Equipment",
         excerpt: "A complete guide to building real strength with nothing but your bodyweight and floor space.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/home_workouts/anywhere_strong.webp",
       },
       {
         id: "space_protocol",
@@ -240,6 +254,7 @@ export const BLOG_DATA = {
         readTime: "9 min",
         title: "Space Protocol: Programming for Small Spaces",
         excerpt: "Smart periodisation and exercise selection when you have limited room to train.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/home_workouts/space_protocol.webp",
       },
       {
         id: "no_gym_required",
@@ -249,6 +264,7 @@ export const BLOG_DATA = {
         readTime: "5 min",
         title: "No Gym Required: The Case for Training at Home",
         excerpt: "Why removing the commute, cost, and crowds can actually improve your consistency.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/home_workouts/Man_training_at_home.webp",
       },
     ],
   },
@@ -273,6 +289,7 @@ export const BLOG_DATA = {
         readTime: "8 min",
         title: "The Recovery Protocol: Sleep, Nutrition, and Active Rest",
         excerpt: "A structured system for recovering faster without doing less work.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/the_recovery_protocol.webp",
       },
       {
         id: "regenrate",
@@ -282,6 +299,7 @@ export const BLOG_DATA = {
         readTime: "6 min",
         title: "Regenrate: Regeneration Strategies for Hard Trainers",
         excerpt: "Advanced recovery modalities explained — what works, what is marketing, and what matters.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/regenerate.webp",
       },
       {
         id: "wellness_core",
@@ -291,6 +309,7 @@ export const BLOG_DATA = {
         readTime: "5 min",
         title: "Wellness Core: The Non-Negotiables of Physical Health",
         excerpt: "Sleep, hydration, stress management — the foundations that every training plan rests on.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/wellness_core.webp",
       },
       {
         id: "rebuild",
@@ -300,6 +319,7 @@ export const BLOG_DATA = {
         readTime: "7 min",
         title: "Rebuild: The Art and Science of Supercompensation",
         excerpt: "Why what happens between your sessions matters as much as the sessions themselves.",
+        image: "https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/rebuild.webp",
       },
     ],
   },

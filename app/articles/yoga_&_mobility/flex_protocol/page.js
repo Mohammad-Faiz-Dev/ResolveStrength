@@ -15,6 +15,7 @@ export default function Page() {
       title="Flex Protocol: A Science-Based Approach to Flexibility"
       subtitle="Stretching, PNF, and loaded mobility — what the evidence says about getting more flexible."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/flex_protocol.webp"
       date="Coming soon"
     />
   );

@@ -15,6 +15,7 @@ export default function Page() {
       title="Structural Edge: Anatomy, Leverage, and Training Smarter"
       subtitle="How your body structure affects exercise selection and where to focus your energy."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/structural_edge.webp"
       date="Coming soon"
     />
   );

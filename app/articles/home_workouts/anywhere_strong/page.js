@@ -15,6 +15,7 @@ export default function Page() {
       title="Anywhere Strong: Train Without Equipment"
       subtitle="A complete guide to building real strength with nothing but your bodyweight and floor space."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/home_workouts/anywhere_strong.webp"
       date="Coming soon"
     />
   );

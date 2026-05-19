@@ -15,6 +15,7 @@ export default function StrengthProtocolPage() {
       subtitle="From rep ranges to rest periods — the variables that separate effective programming from guesswork."
       readTime="12 min"
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/strength_protocol.webp"
       date="Coming Soon"
     />
   );

@@ -84,6 +84,16 @@ export default function BlogCard({ post, categorySlug }) {
           width: 100%;
           height: 100%;
         }
+        .blog-card-image-actual {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.4s ease;
+        }
+        .blog-card:hover .blog-card-image-actual {
+          transform: scale(1.04);
+        }
         /* Shine sweep on hover */
         .blog-card-image::before {
           content: '';
@@ -180,15 +190,23 @@ export default function BlogCard({ post, categorySlug }) {
       `}} />
 
       <Link href={href} className="blog-card" style={{ textDecoration: "none" }}>
-        {/* Image area — TODO: Replace with next/image once real images are available */}
+        {/* Image area */}
         <div className="blog-card-image">
-          <div className="blog-card-image-inner">
-            <div
-              className="blog-card-image-icon"
-              dangerouslySetInnerHTML={{ __html: IMAGE_PLACEHOLDER_ICON }}
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="blog-card-image-actual"
             />
-            <span className="blog-card-image-label">Image coming soon</span>
-          </div>
+          ) : (
+            <div className="blog-card-image-inner">
+              <div
+                className="blog-card-image-icon"
+                dangerouslySetInnerHTML={{ __html: IMAGE_PLACEHOLDER_ICON }}
+              />
+              <span className="blog-card-image-label">Image coming soon</span>
+            </div>
+          )}
         </div>
 
         <div className="blog-card-body">

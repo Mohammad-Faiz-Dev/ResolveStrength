@@ -15,6 +15,7 @@ export default function Page() {
       title="Raw Power: Developing Explosive Strength"
       subtitle="The distinction between strength and power, and how to train both effectively."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/raw_power.webp"
       date="Coming soon"
     />
   );

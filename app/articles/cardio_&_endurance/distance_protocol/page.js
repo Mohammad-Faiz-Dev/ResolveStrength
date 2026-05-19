@@ -15,6 +15,7 @@ export default function Page() {
       title="The Distance Protocol: Training for Long-Form Endurance"
       subtitle="A structured approach to building mileage and stamina for distance events."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/the_distance_protocol.webp"
       date="Coming soon"
     />
   );

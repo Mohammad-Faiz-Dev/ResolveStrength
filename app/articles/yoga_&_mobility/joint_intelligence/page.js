@@ -15,6 +15,7 @@ export default function Page() {
       title="Joint Intelligence: Training Healthy, Resilient Joints"
       subtitle="Why joint health is the foundation of longevity in training — and how to build it."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/joint_intelligence.webp"
       date="Coming soon"
     />
   );

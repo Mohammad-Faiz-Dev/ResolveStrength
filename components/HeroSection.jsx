@@ -278,15 +278,15 @@ export default function HeroSection() {
             </p>
             <div className="hero-stats">
               <div className="stat">
-                <div className="stat-num">12K+</div>
+                <div className="stat-num">00</div>
                 <div className="stat-label">Members</div>
               </div>
               <div className="stat">
-                <div className="stat-num">340+</div>
+                <div className="stat-num">25+</div>
                 <div className="stat-label">Articles</div>
               </div>
               <div className="stat">
-                <div className="stat-num">98%</div>
+                <div className="stat-num">100%</div>
                 <div className="stat-label">Science-cited</div>
               </div>
             </div>

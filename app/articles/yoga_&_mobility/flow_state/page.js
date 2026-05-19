@@ -15,6 +15,7 @@ export default function Page() {
       title="Flow State: Using Yoga to Enhance Athletic Performance"
       subtitle="How a consistent yoga practice builds movement quality and body awareness serious athletes need."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/flow_state.webp"
       date="Coming soon"
     />
   );

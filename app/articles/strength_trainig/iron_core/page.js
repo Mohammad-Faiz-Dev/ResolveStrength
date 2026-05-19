@@ -15,6 +15,7 @@ export default function Page() {
       title="Iron Core: Building a Foundation of Functional Strength"
       subtitle="Core training beyond crunches — how true trunk stability transfers to every lift."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/strength_trainig/iron_core.webp"
       date="Coming soon"
     />
   );

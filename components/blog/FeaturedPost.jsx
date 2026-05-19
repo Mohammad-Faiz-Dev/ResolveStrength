@@ -82,6 +82,16 @@ export default function FeaturedPost({ post, categorySlug }) {
           width: 100%;
           height: 100%;
         }
+        .featured-post-image-actual {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+        .featured-post:hover .featured-post-image-actual {
+          transform: scale(1.04);
+        }
         /* Sweep effect on hover */
         .featured-post-image::after {
           content: '';
@@ -197,15 +207,23 @@ export default function FeaturedPost({ post, categorySlug }) {
       `}} />
 
       <div className="featured-post">
-        {/* Image — TODO: Replace with <Image> from next/image using post.image path */}
+        {/* Image */}
         <div className="featured-post-image">
-          <div className="featured-post-image-inner">
-            <div
-              className="featured-post-image-icon"
-              dangerouslySetInnerHTML={{ __html: IMAGE_PLACEHOLDER_ICON }}
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="featured-post-image-actual"
             />
-            <span className="featured-post-image-label">Featured image coming soon</span>
-          </div>
+          ) : (
+            <div className="featured-post-image-inner">
+              <div
+                className="featured-post-image-icon"
+                dangerouslySetInnerHTML={{ __html: IMAGE_PLACEHOLDER_ICON }}
+              />
+              <span className="featured-post-image-label">Featured image coming soon</span>
+            </div>
+          )}
         </div>
 
         <div className="featured-post-content">

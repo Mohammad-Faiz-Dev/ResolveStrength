@@ -15,6 +15,7 @@ export default function Page() {
       title="Space Protocol: Programming for Small Spaces"
       subtitle="Smart periodisation and exercise selection when you have limited room to train."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/home_workouts/space_protocol.webp"
       date="Coming soon"
     />
   );

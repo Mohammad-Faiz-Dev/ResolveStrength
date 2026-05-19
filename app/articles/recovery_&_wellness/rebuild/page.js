@@ -15,6 +15,7 @@ export default function Page() {
       title="Rebuild: The Art and Science of Supercompensation"
       subtitle="Why what happens between your sessions matters as much as the sessions themselves."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/rebuild.webp"
       date="Coming soon"
     />
   );

@@ -15,6 +15,7 @@ export default function Page() {
       title="The Stamina Lab: Building Work Capacity That Lasts"
       subtitle="Methodical training protocols designed to expand your endurance ceiling week by week."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/the_stamina_lab.webp"
       date="Coming soon"
     />
   );

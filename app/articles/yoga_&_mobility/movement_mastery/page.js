@@ -15,6 +15,7 @@ export default function Page() {
       title="Movement Mastery: From Stiffness to Fluidity"
       subtitle="A progressive system for reclaiming full range of motion and moving pain-free."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/yoga_&_mobility/movement_mastery.webp"
       date="Coming soon"
     />
   );

@@ -15,6 +15,7 @@ export default function Page() {
       title="Wellness Core: The Non-Negotiables of Physical Health"
       subtitle="Sleep, hydration, stress management — the foundations that every training plan rests on."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/recovery_&_wellness/wellness_core.webp"
       date="Coming soon"
     />
   );

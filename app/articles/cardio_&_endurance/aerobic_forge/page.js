@@ -15,6 +15,7 @@ export default function Page() {
       title="Build Your Aerobic Base from the Ground Up"
       subtitle="How progressive cardio training reshapes your cardiovascular system for lasting endurance."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/aerobic_base.webp"
       date="Coming soon"
     />
   );

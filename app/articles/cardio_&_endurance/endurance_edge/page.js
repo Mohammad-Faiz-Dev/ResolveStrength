@@ -15,6 +15,7 @@ export default function Page() {
       title="Find Your Endurance Edge"
       subtitle="Science-backed strategies to push past perceived limits and sustain effort longer."
       author="ResolveStrength Editorial"
+      featuredImage="https://qvqrllepiterihelgckb.supabase.co/storage/v1/object/public/Assets/Articles/cardio_&_endurance/find_your_endurance_edge.webp"
       date="Coming soon"
     />
   );
